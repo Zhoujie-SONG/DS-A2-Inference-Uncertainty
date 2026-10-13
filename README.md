@@ -31,7 +31,7 @@ python -m jupyter nbconvert --execute --to notebook --inplace analysis.ipynb --E
 
 For interactive reading: `python -m jupyterlab analysis.ipynb` (JupyterLab is included
 in requirements). Running every cell recreates all numerical results, figures,
-report.pdf and README.md in the current project directory. AI_USE_LOG.md is preserved.
+report.pdf and README.md in the current project directory. VERIFICATION_LOG.md is preserved.
 No API, GPU, internet data source or external PDF compiler is required after installation.
 
 ## Files
@@ -41,7 +41,7 @@ DS-A2-Inference-Uncertainty/
   README.md
   requirements.txt
   report.pdf
-  AI_USE_LOG.md
+  VERIFICATION_LOG.md
   .gitignore
   results/
     sample_data.csv              # 200 initial individual scores
@@ -82,37 +82,36 @@ all counterexample CI formulas, CSV round trips, repetition counts, p-value rang
 and the test/coverage identity. The exact binomial interval for the null-condition
 rejection rate is [0.0262, 0.0635]. This is
 a calibration diagnostic, not a requirement to manufacture a 5% rejection rate.
-Clean-kernel rerun and file-hash reproducibility checks are recorded in AI_USE_LOG.md.
+Clean-kernel rerun and file-hash reproducibility checks are recorded in VERIFICATION_LOG.md.
 
 All observations are independent normal draws. Welch does not fix dependence or
 selection bias. Scores are unbounded; real exams may be bounded or nonnormal.
 Monte Carlo rates have finite precision (500 or 1,000 repeats). Statistical significance
 does not establish an improvement of at least 5 points. No real educational conclusion
-can be drawn. Student must personally review explanations and the course's AI policy.
+can be drawn. Student must personally review the explanations and course submission requirements.
 
 ## GitHub repository
 [Zhoujie-SONG/DS-A2-Inference-Uncertainty](https://github.com/Zhoujie-SONG/DS-A2-Inference-Uncertainty)
-is the private remote repository. The project is on the `main` branch. Creation
+is the public remote repository. The project is on the `main` branch. Creation
 and the initial push were completed on 13 October 2026 at the user's request;
-see AI_USE_LOG.md for the execution record.
+see VERIFICATION_LOG.md for the execution record.
 
-To obtain a copy with an authorized GitHub account:
+To obtain a copy:
 
 ```bash
 git clone https://github.com/Zhoujie-SONG/DS-A2-Inference-Uncertainty.git
 cd DS-A2-Inference-Uncertainty
 ```
 
-Share the repository URL on the course platform and ensure the course reviewer
-has access to the private repository. No tag was created.
+Share the public repository URL on the course platform. No tag was created.
 
 ## Submission Summary
 This project asks whether traditional and new teaching methods differ in population mean exam scores. It uses synthetic normal data, not a real teaching experiment. Before sampling, I specified the estimand as mean B minus mean A, a two-sided null of zero difference, alpha 0.05, and a meaningful improvement of 5 points. With 100 observations per group and seed 42, the observed difference was 5.595 points. The Welch test gave p=0.003226 and a 95% confidence interval [1.896, 9.293]. This supports a nonzero simulated difference but does not establish an improvement of at least 5 points. Across 1,000 repeated samples, the estimate had mean 4.979 and SD 2.082, compared with theoretical SE 2.121. Power simulations used 500 repetitions per condition. Increasing sample size from 20 to 200 per group increased rejection rates from 16.2% to 92.8%; greater noise reduced power and larger effects increased it. The zero-effect rejection rate was 4.2%, representing Type I error. In 1,000 equal-mean counterexamples with unequal variances and sample sizes, Student and Welch Type I error rates were 30.1% and 5.6%; their 95% interval coverage rates were 69.9% and 94.4%. The pooled variance assumption made Student inference unreliable here. Finite Monte Carlo precision, independence assumptions and unbounded normal scores limit generalization. These results demonstrate statistical methods and cannot show that a real teaching method is effective.
 
 Word count (whitespace-delimited): 220.
 
-## Reference and AI transparency
+## Reference and verification
 [SciPy ttest_ind documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html)
 documents the equal_var switch, df and confidence_interval method. The notebook passes
-B first so the estimate and interval have the sign B minus A. See AI_USE_LOG.md for
-AI assistance, actual programmatic verification, real setup issues and pending human checks.
+B first so the estimate and interval have the sign B minus A. See VERIFICATION_LOG.md for
+actual programmatic verification, setup issues and pending student checks.
