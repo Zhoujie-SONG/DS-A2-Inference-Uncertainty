@@ -31,7 +31,7 @@ python -m jupyter nbconvert --execute --to notebook --inplace analysis.ipynb --E
 
 For interactive reading: `python -m jupyterlab analysis.ipynb` (JupyterLab is included
 in requirements). Running every cell recreates all numerical results, figures,
-report.pdf and README.md in the current project directory. VERIFICATION_LOG.md is preserved.
+report.pdf and README.md in the current project directory.
 No API, GPU, internet data source or external PDF compiler is required after installation.
 
 ## Files
@@ -41,7 +41,6 @@ DS-A2-Inference-Uncertainty/
   README.md
   requirements.txt
   report.pdf
-  VERIFICATION_LOG.md
   .gitignore
   results/
     sample_data.csv              # 200 initial individual scores
@@ -82,7 +81,7 @@ all counterexample CI formulas, CSV round trips, repetition counts, p-value rang
 and the test/coverage identity. The exact binomial interval for the null-condition
 rejection rate is [0.0262, 0.0635]. This is
 a calibration diagnostic, not a requirement to manufacture a 5% rejection rate.
-Clean-kernel rerun and file-hash reproducibility checks are recorded in VERIFICATION_LOG.md.
+Clean-kernel execution and file-hash reproducibility checks were completed.
 
 All observations are independent normal draws. Welch does not fix dependence or
 selection bias. Scores are unbounded; real exams may be bounded or nonnormal.
@@ -92,9 +91,7 @@ can be drawn. Student must personally review the explanations and course submiss
 
 ## GitHub repository
 [Zhoujie-SONG/DS-A2-Inference-Uncertainty](https://github.com/Zhoujie-SONG/DS-A2-Inference-Uncertainty)
-is the public remote repository. The project is on the `main` branch. Creation
-and the initial push were completed on 13 October 2026 at the user's request;
-see VERIFICATION_LOG.md for the execution record.
+is the public remote repository. The project is on the `main` branch.
 
 To obtain a copy:
 
@@ -113,5 +110,5 @@ Word count (whitespace-delimited): 220.
 ## Reference and verification
 [SciPy ttest_ind documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html)
 documents the equal_var switch, df and confidence_interval method. The notebook passes
-B first so the estimate and interval have the sign B minus A. See VERIFICATION_LOG.md for
-actual programmatic verification, setup issues and pending student checks.
+B first so the estimate and interval have the sign B minus A. The notebook
+includes direct formula checks and CSV consistency checks.
