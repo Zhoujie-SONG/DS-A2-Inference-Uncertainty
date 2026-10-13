@@ -90,17 +90,21 @@ Monte Carlo rates have finite precision (500 or 1,000 repeats). Statistical sign
 does not establish an improvement of at least 5 points. No real educational conclusion
 can be drawn. Student must personally review explanations and the course's AI policy.
 
-## GitHub preparation
-This is a standalone local Git project. See AI_USE_LOG.md and the delivery message
-for the actual commit status; no remote repository or push is claimed here.
-After creating an empty GitHub repository, use its actual URL:
+## GitHub repository
+[Zhoujie-SONG/DS-A2-Inference-Uncertainty](https://github.com/Zhoujie-SONG/DS-A2-Inference-Uncertainty)
+is the private remote repository. The project is on the `main` branch. Creation
+and the initial push were completed on 13 October 2026 at the user's request;
+see AI_USE_LOG.md for the execution record.
+
+To obtain a copy with an authorized GitHub account:
 
 ```bash
-git remote add origin <YOUR_ACTUAL_GITHUB_REPOSITORY_URL>
-git push -u origin main
+git clone https://github.com/Zhoujie-SONG/DS-A2-Inference-Uncertainty.git
+cd DS-A2-Inference-Uncertainty
 ```
 
-Verify the GitHub files and share its real URL on the course platform. No tag is required.
+Share the repository URL on the course platform and ensure the course reviewer
+has access to the private repository. No tag was created.
 
 ## Submission Summary
 This project asks whether traditional and new teaching methods differ in population mean exam scores. It uses synthetic normal data, not a real teaching experiment. Before sampling, I specified the estimand as mean B minus mean A, a two-sided null of zero difference, alpha 0.05, and a meaningful improvement of 5 points. With 100 observations per group and seed 42, the observed difference was 5.595 points. The Welch test gave p=0.003226 and a 95% confidence interval [1.896, 9.293]. This supports a nonzero simulated difference but does not establish an improvement of at least 5 points. Across 1,000 repeated samples, the estimate had mean 4.979 and SD 2.082, compared with theoretical SE 2.121. Power simulations used 500 repetitions per condition. Increasing sample size from 20 to 200 per group increased rejection rates from 16.2% to 92.8%; greater noise reduced power and larger effects increased it. The zero-effect rejection rate was 4.2%, representing Type I error. In 1,000 equal-mean counterexamples with unequal variances and sample sizes, Student and Welch Type I error rates were 30.1% and 5.6%; their 95% interval coverage rates were 69.9% and 94.4%. The pooled variance assumption made Student inference unreliable here. Finite Monte Carlo precision, independence assumptions and unbounded normal scores limit generalization. These results demonstrate statistical methods and cannot show that a real teaching method is effective.

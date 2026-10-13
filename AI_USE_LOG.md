@@ -167,7 +167,7 @@ in the model, but an improvement of at least 5 points is not established.
 Student/Welch counterexample Type I error: 30.1% / 5.6%; interval coverage:
 69.9% / 94.4%. These are finite-simulation estimates, not universal guarantees.
 
-Pending student actions:
+Pending student actions at the initial build (GitHub setup was completed in the follow-up below):
 
 - Personally review the notebook's complete rendered layout and explain the
   methods, assumptions and results in their own words.
@@ -179,3 +179,36 @@ Pending student actions:
 
 No manual student review, teacher approval or platform submission has occurred
 as part of this automated build.
+
+
+## GitHub follow-up — 13 October 2026
+
+The user explicitly requested creation of a remote repository and a GitHub push.
+The GitHub connector was authenticated as szjhuho-maker, while Git Credential
+Manager was authenticated as Zhoujie-SONG, matching the local Git author setup.
+The latter account was used for this Git operation; this choice was stated to
+the user before creation. Credentials were kept in memory and were not printed
+or written to project files.
+
+The GitHub REST API confirmed that the requested repository name was available
+and created `Zhoujie-SONG/DS-A2-Inference-Uncertainty` as a private, empty repository
+(HTTP 201). The returned repository URL was
+https://github.com/Zhoujie-SONG/DS-A2-Inference-Uncertainty.
+
+Actual commands:
+
+```bash
+git remote add origin https://github.com/Zhoujie-SONG/DS-A2-Inference-Uncertainty.git
+git push -u origin main
+```
+
+Both succeeded. The initial assignment commit `a9f9877` was uploaded and main now
+tracks origin/main. README and its notebook-generating text were updated to use
+the actual repository URL and clone instructions; the notebook's numerical code
+and saved experiment outputs were preserved. Its format and all code-cell syntax
+were checked after this documentation-only update. The resulting documentation
+commit is visible in Git history.
+
+GitHub setup is complete. Human review, course-policy verification and platform
+submission remain student actions. A course reviewer will need access to this
+private repository. No platform submission or teacher review is claimed.
